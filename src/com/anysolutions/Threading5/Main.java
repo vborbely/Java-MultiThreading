@@ -1,7 +1,6 @@
 package com.anysolutions.Threading5;
 
 
-import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
