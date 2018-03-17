@@ -6,23 +6,13 @@ import java.util.concurrent.BlockingQueue;
 
 public class Main {
 
-    private static BlockingQueue<Integer> queue = new ArrayBlockingQueue<Integer>(10);
+    private static BlockingQueue<Integer> queue = new ArrayBlockingQueue<>(10);
 
     public static void main(final String args[]) throws InterruptedException {
 
-        Thread t1 = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                producer();
-            }
-        });
+        Thread t1 = new Thread(() -> producer());
 
-        Thread t2 = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                consumer();
-            }
-        });
+        Thread t2 = new Thread(() -> consumer());
 
         t1.start();
         t2.start();
